@@ -6,5 +6,5 @@ A client (for example browser) sends its public key to the server and requests f
 The server encrypts the data using client’s public key and sends the encrypted data.
 Client receives this data and decrypts it
 
-# python3 server.py
-# python3 client.py
+ python3 server.py
+ python3 client.py
