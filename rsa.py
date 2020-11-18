@@ -71,18 +71,3 @@ def decrypt(msg_ciphertext, package):
     msg_plaintext = pow(msg_ciphertext, d, n)
     return binascii.unhexlify(hex(msg_plaintext)[2:]).decode()
 
-
-'''public, private = generate_keypair(1024)
-
-msg = input("Write msg: ")
-
-hex_data   = binascii.hexlify(msg.encode())
-plain_text = int(hex_data, 16)
-
-t1 = time.time()
-encrypted_msg = encrypt(plain_text, public)
-print("Encrypted msg: " + str(encrypted_msg))
-
-decrypted_msg = decrypt(encrypted_msg, private)
-print("Decrypted msg: " + str(decrypted_msg))
-print('Runtime : ' + str(time.time()-t1) + ' seconds')'''
