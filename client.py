@@ -6,7 +6,7 @@ import pickle
 import rsa
 import binascii
 
-name=input("enter your name :")
+name=input("enter your name : ")
 public, private = rsa.generate_keypair(1024)
 msg=pickle.dumps(public)
 #print(public[0])
@@ -40,7 +40,7 @@ def send():
 def recv():
     while True:
         response_message =int(client.recv(1024).decode())
-        #print(response_message)
+        print(response_message)
         decrypted_msg = rsa.decrypt(response_message, private)
         # scrollbar:
         listbox.insert(END, name1 +" : "+ str(decrypted_msg))
@@ -93,7 +93,7 @@ edit_text.pack(fill=X, side=BOTTOM)
 
 root.title(name)
 root.geometry("310x260")
-root.resizable(width=False, height=False)
+root.resizable(width=True, height=True)
 
 threading.Thread(target=recv).start()
 
