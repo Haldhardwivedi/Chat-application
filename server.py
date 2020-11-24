@@ -31,6 +31,7 @@ def set_ip():
 def send():
     if str(edit_text.get()).strip() != "":
         message = str.encode(edit_text.get())
+        #converting it into numb
         hex_data   = binascii.hexlify(message)
         plain_text = int(hex_data, 16)
         ctt=rsa.encrypt(plain_text,pkey)
@@ -47,7 +48,7 @@ def send():
 def recv():
     while True:
         response_message =int(conn.recv(1024).decode())
-        #print(response_message)
+        print(response_message)
         decrypted_msg = rsa.decrypt(response_message, private)
         # scrollbar:
         listbox.insert(END, name1 +" : "+ str(decrypted_msg))
@@ -80,8 +81,8 @@ input_root.mainloop()
 #sending details-----------
 conn.send(str.encode(name))
 name1=conn.recv(1024).decode()
-conn.send(msg)
-rmsg=conn.recv(1024)
+conn.send(msg)#sending public key
+rmsg=conn.recv(1024)#recv pub key
 pkey=pickle.loads(rmsg)
 #print("public key of other is :",pkey[0])
 # 2: Main Root GUI
@@ -102,7 +103,7 @@ edit_text.pack(fill=X, side=BOTTOM)
 
 root.title(name)
 root.geometry("310x260")
-root.resizable(width=False, height=False)
+root.resizable(width=True, height=True)
 
 threading.Thread(target=recv).start()
 
