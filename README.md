@@ -9,4 +9,6 @@ Client receives this data and decrypts it
 
  ### python3 server.py
  ### python3 client.py
-![alt text](IMG-20201125-WA0016.jpg)
+![gui 1 ](gui1.png)
+![gui 2 ](gui2.png)
+
