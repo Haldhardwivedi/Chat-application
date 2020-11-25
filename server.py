@@ -59,7 +59,8 @@ def recv():
 
 # 1: Input Root GUI
 input_root = Tk()
-
+bgimage = PhotoImage(file ="images.png")
+Label(input_root,image=bgimage).place(relwidth=1,relheight=1)
 edit_text_ip = Entry()
 edit_text_port = Entry()
 ip_label = Label(input_root, text="Enter IP:")
@@ -74,7 +75,7 @@ edit_text_port.pack(fill=X, side=TOP)
 connect_btn.pack(fill=X, side=BOTTOM)
 
 input_root.title(name)
-input_root.geometry("300x300")
+input_root.geometry("400x700")
 input_root.resizable(width=False, height=False)
 
 input_root.mainloop()
@@ -87,7 +88,8 @@ pkey=pickle.loads(rmsg)
 #print("public key of other is :",pkey[0])
 # 2: Main Root GUI
 root = Tk()
-
+bgimage2 = PhotoImage(file ="images.png")
+Label(root,image=bgimage2).place(relwidth=1,relheight=1)
 # Scrollbar:
 scrollbar = Scrollbar(root)
 scrollbar.pack(side=RIGHT, fill=Y)
@@ -102,7 +104,7 @@ button.pack(fill=X, side=BOTTOM)
 edit_text.pack(fill=X, side=BOTTOM)
 
 root.title(name)
-root.geometry("310x260")
+root.geometry("400x700")
 root.resizable(width=True, height=True)
 
 threading.Thread(target=recv).start()
