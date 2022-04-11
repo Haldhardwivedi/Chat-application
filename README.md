@@ -7,8 +7,16 @@ A client (for example browser) sends its public key to the server and requests f
 The server encrypts the data using client’s public key and sends the encrypted data.
 Client receives this data and decrypts it
 
- ### python3 server.py
- ### python3 client.py
-![gui 1 ](gui1.png)
-![gui 2 ](gui2.png)
+### To Run The porgram First Run The server and open a port for connection
+
+``` 
+python3 server.py
+
+```
+ ### Now Run The client Script and connect to the host server
+``` 
+python3 client.py
+```
+![server](gui1.png)
+![client](gui2.png)
 
