@@ -9,13 +9,10 @@ Client receives this data and decrypts it
 
 ### To Run The porgram First Run The server and open a port for connection
 
-``` 
-python3 server.py
-
+``` python3 server.py
 ```
  ### Now Run The client Script and connect to the host server
-``` 
-python3 client.py
+``` python3 client.py
 ```
 ![server](gui1.png)
 ![client](gui2.png)
