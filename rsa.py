@@ -1,8 +1,6 @@
 from __future__ import unicode_literals
 from math import sqrt
-import random
-from random import randint as rand
-from random import getrandbits
+from Crypto.Random import random.randint as rand
 import sympy
 import time
 import binascii
